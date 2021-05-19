@@ -1,27 +1,25 @@
 const sampleArray = ['kita', 'atik', 'tika', 'aku', 'kia', 'makan', 'kua']
-const resultArray = []
+const result = []
 
-funOrderAnagram(resultArray, sampleArray)
+funcOrderAnagram(result, sampleArray)
 
-function funOrderAnagram(result, sample) {
-  const resultArray = result;
+function funcOrderAnagram(result, sample) {
   const restSample = []
   const anagramWord = []
-  const sampleString = sample[0]
   
   for (let i = 0; i < sample.length; i++) {
-    if (compareTwoWord(sampleString, sample[i])) {
+    if (isAnagramWord(sample[0], sample[i])) {
       anagramWord.push(sample[i])
     } else {
       restSample.push(sample[i])
     }
   }
-  resultArray.push(anagramWord)
-  if (restSample.length < 1) return resultArray
-  return funOrderAnagram(resultArray, restSample)
+  result.push(anagramWord)
+  if (restSample.length < 1) return result
+  funcOrderAnagram(result, restSample)
 }
 
-function compareTwoWord(first, two) {
+function isAnagramWord(first, two) {
   if (first.length !== two.length) return false;
   for (let i = 0; i < first.length; i++) {
     if (!two.includes(first[i])) return false;
