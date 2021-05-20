@@ -23,6 +23,7 @@ function isAnagramWord(first, two) {
   if (first.length !== two.length) return false;
   for (let i = 0; i < first.length; i++) {
     if (!two.includes(first[i])) return false;
+    two = two.replace(first[i], '')
   }
   return true;
 }
