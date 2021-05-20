@@ -1,4 +1,4 @@
-# logic-test
+# order-anagram
 
 order anagram word use javascript, not allowed es6 map, sort, reduce, find, filter
 
