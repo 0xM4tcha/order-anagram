@@ -1,4 +1,4 @@
-# stockbit-logic-test
+# logic-test
 
 order anagram word use javascript, not allowed es6 map, sort, reduce, find, filter
 
