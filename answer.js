@@ -8,22 +8,18 @@ function funcOrderAnagram(result, sample) {
   const anagramWord = []
   
   for (let i = 0; i < sample.length; i++) {
-    if (isAnagramWord(sample[0], sample[i])) {
-      anagramWord.push(sample[i])
-    } else {
-      restSample.push(sample[i])
-    }
+    isAnagramWord(sample[0], sample[i]) ? anagramWord.push(sample[i]) : restSample.push(sample[i])
   }
   result.push(anagramWord)
   if (restSample.length < 1) return result
   funcOrderAnagram(result, restSample)
 }
 
-function isAnagramWord(first, two) {
-  if (first.length !== two.length) return false;
-  for (let i = 0; i < first.length; i++) {
-    if (!two.includes(first[i])) return false;
-    two = two.replace(first[i], '')
+function isAnagramWord(firstWord, lastWord) {
+  if (firstWord.length !== lastWord.length) return false;
+  for (let i = 0; i < firstWord.length; i++) {
+    if (!lastWord.includes(firstWord[i])) return false;
+    lastWord = lastWord.replace(firstWord[i], '')
   }
   return true;
 }
